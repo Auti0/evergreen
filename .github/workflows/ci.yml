@@ -37,6 +37,9 @@ jobs:
       - name: Run test
         run: yarn test
 
+      - name: Install c8
+        run: yarn global add c8
+
       - name: Generate Report
         run: c8 report
 
