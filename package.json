@@ -31,7 +31,7 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "test": "yarn tsd && c8 yarn jest",
+    "test": "yarn tsd && yarn jest",
     "test:watch": "yarn run test -- --watch",
     "lint": "eslint \"src/**/*.js\" --cache",
     "prepublishOnly": "rm -rf esm commonjs umd && yarn build",
