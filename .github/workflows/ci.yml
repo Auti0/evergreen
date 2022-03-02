@@ -32,13 +32,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn 
+
       - name: Run test
-        run: yarn run test
+        run: yarn test
 
       - name: Generate Report
-        run: c8
-        
+        run: c8 report
+
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v3.0.0
         env:
