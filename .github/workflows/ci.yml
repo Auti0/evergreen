@@ -30,26 +30,15 @@ jobs:
             ${{ runner.os }}-yarn-
       - name: Install dependencies
         run: yarn install --frozen-lockfile
-      - name: Install docs dependencies
-        working-directory: './docs'
-        run: 'yarn install --frozen-lockfile'
-      - name: Run build
-        run: yarn run build
-      - name: Run prettier
-        run: yarn run prettier 'src/**/*.js' --check
       - name: Run test
         run: yarn run test
-      - name: Run docs lint
-        working-directory: './docs'
-        run: yarn run lint
-      - name: Run size-limit
-        run: yarn run size-limit 
 
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v3.0.0
         env:
           CC_TEST_REPORTER_ID: 7f2a262dc8f073aca1980984a8faabbef62bae9e4bf72f27fd6864542afaf6b4
         with:
-          coverageLocations: .coverage/*.lcov:lcov
+          coverageCommand: yarn run coverage
+          debug: true
                             
 
