@@ -47,7 +47,6 @@ jobs:
           CC_TEST_REPORTER_ID: 7f2a262dc8f073aca1980984a8faabbef62bae9e4bf72f27fd6864542afaf6b4
         with:
           coverageLocations: ${{github.workspace}}/.coverage/lcov.info:lcov
-          verifyDownload: false
           debug: true
                             
 
