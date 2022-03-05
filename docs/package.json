@@ -12,7 +12,7 @@
   "dependencies": {
     "@lottiefiles/lottie-player": "^1.0.3",
     "@mdx-js/react": "^1.6.22",
-    "@segment/consent-manager": "^5.1.0",
+    "@segment/consent-manager": "^5.4.0",
     "@types/react-github-button": "^0.1.0",
     "@types/react-syntax-highlighter": "^13.5.0",
     "evergreen-ui": "6.8.2",
