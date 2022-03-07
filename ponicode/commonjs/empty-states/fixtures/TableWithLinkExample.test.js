@@ -1,8 +1,8 @@
-const TableWithLinkExample = require("../../../../commonjs/empty-states/fixtures/TableWithLinkExample")
+const TableWithLinkExample = require('../../../../commonjs/empty-states/fixtures/TableWithLinkExample')
 // @ponicode
-describe("TableWithLinkExample.default", () => {
-    test("0", () => {
-        let result = TableWithLinkExample.default()
-        expect(result).toMatchSnapshot()
-    })
+describe('TableWithLinkExample.default', () => {
+  test('0', () => {
+    const result = TableWithLinkExample.default()
+    expect(result).toMatchSnapshot()
+  })
 })

@@ -1,8 +1,8 @@
-const ThemeContext = require("../../../../src/theme/src/ThemeContext")
+const ThemeContext = require('../../../../src/theme/src/ThemeContext')
 // @ponicode
-describe("ThemeContext.getThemeContext", () => {
-    test("0", () => {
-        let result = ThemeContext.getThemeContext()
-        expect(result).toMatchSnapshot()
-    })
+describe('ThemeContext.getThemeContext', () => {
+  test('0', () => {
+    const result = ThemeContext.getThemeContext()
+    expect(result).toMatchSnapshot()
+  })
 })

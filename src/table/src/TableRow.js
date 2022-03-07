@@ -16,11 +16,11 @@ export const pseudoSelectors = {
   _active: '&[aria-current="true"], &[data-isselectable="true"]:active',
   _current: '&[aria-current="true"], &[aria-checked="true"]',
   _lastOfType: '&:last-of-type',
-  _isSelectable: '&[data-isselectable="true"]'
+  _isSelectable: '&[data-isselectable="true"]',
 }
 
 const internalStyles = {
-  display: 'flex'
+  display: 'flex',
 }
 
 const TableRow = memo(
@@ -52,7 +52,7 @@ const TableRow = memo(
     const onSelectRef = useLatest(onSelect)
 
     const handleClick = useCallback(
-      event => {
+      (event) => {
         safeInvoke(onClickRef.current, event)
 
         if (isSelectable) {
@@ -69,17 +69,15 @@ const TableRow = memo(
     )
 
     const handleKeyDown = useCallback(
-      event => {
+      (event) => {
         safeInvoke(onKeyDownRef.current, event)
 
         if (isSelectable) {
           if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
             try {
               manageTableRowFocusInteraction(event.key, mainRef.current)
-            // eslint-disable-next-line no-empty
-            } catch (e) {
-              
-            }
+              // eslint-disable-next-line no-empty
+            } catch (e) {}
           } else if (event.key === 'Escape') {
             if (mainRef.current && mainRef.current instanceof Node) mainRef.current.blur()
           }
@@ -92,12 +90,11 @@ const TableRow = memo(
 
     const clickable = useClickable({ onKeyDown: handleKeyDown, tabIndex })
 
-    const { className: themedClassName, height: themeHeight, ...boxProps } = useStyleConfig(
-      'TableRow',
-      { appearance, intent },
-      pseudoSelectors,
-      internalStyles
-    )
+    const {
+      className: themedClassName,
+      height: themeHeight,
+      ...boxProps
+    } = useStyleConfig('TableRow', { appearance, intent }, pseudoSelectors, internalStyles)
 
     const height = rest.height || themeHeight
 
@@ -172,7 +169,7 @@ TableRow.propTypes = {
    * Class name passed to the table row.
    * Only use if you know what you are doing.
    */
-  className: PropTypes.string
+  className: PropTypes.string,
 }
 
 export default TableRow

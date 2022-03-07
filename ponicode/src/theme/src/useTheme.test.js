@@ -1,8 +1,8 @@
-const useTheme = require("../../../../src/theme/src/useTheme")
+const useTheme = require('../../../../src/theme/src/useTheme')
 // @ponicode
-describe("useTheme.default", () => {
-    test("0", () => {
-        let result = useTheme.default()
-        expect(result).toMatchSnapshot()
-    })
+describe('useTheme.default', () => {
+  test('0', () => {
+    const result = useTheme.default()
+    expect(result).toMatchSnapshot()
+  })
 })
