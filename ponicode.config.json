@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "0",
+  "name": "evergreen",
+  "rootDir": "./src",
+  "testEnvironment": "jsdom",
+  "testLocationStrategy": "relativeToProjectRoot",
+  "testLocationFolder": "./ponicode",
+  "testNamePattern": "{name}.test.{ext}"
+}
