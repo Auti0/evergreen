@@ -5,7 +5,7 @@ git:
 github: 
   release: true
   autoGenerate: false
-  releaseNotes: "npx auto-changelog --stdout --commit-limit false -u --template https://raw.githubusercontent.com/release-it/release-it/master/templates/changelog-compact.hbs"
+  releaseNotes: "npx auto-changelog --stdout --commit-limit false -u --template https://raw.githubusercontent.com/release-it/release-it/master/templates/keepachangelog.hbs"
 npm:
   publish: false
 
