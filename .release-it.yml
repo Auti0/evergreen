@@ -2,8 +2,10 @@ git:
   commitMessage: "chore: release v${version}"
 
 github: 
-  release: false
-  plugins":
+  release: true
+  autoGenerate: true
 npm:
   publish: false
+
+plugins":
 
