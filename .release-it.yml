@@ -1,0 +1,9 @@
+git:
+  commitMessage: "chore: release v${version}"
+
+github: 
+  release: false
+  plugins":
+npm:
+  publish: false
+
