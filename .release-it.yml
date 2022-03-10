@@ -9,6 +9,8 @@ npm:
   publish: false
 
 plugins:
-
+  '@release-it/conventional-changelog':
+    preset: 'angular'
+    infile: 'CONVENTIONAL_ANGULAR.md'
 hooks:
-  after:bump: "npx auto-changelog -p"
+  after:bump: "npx auto-changelog -p --output AUTOCHANGELOG.md"
