@@ -1,11 +1,14 @@
 git:
   commitMessage: "chore: release v${version}"
-
+  changelog: "npx auto-changelog --stdout --commit-limit false -u --template https://raw.githubusercontent.com/release-it/release-it/master/templates/changelog-compact.hbs"
+  requireCleanWorkingDir: false
 github: 
   release: true
   autoGenerate: true
 npm:
   publish: false
 
-plugins":
+plugins:
 
+hooks:
+  after:bump: "npx auto-changelog -p"
