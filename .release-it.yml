@@ -7,10 +7,9 @@ github:
   releaseNotes: "npx auto-changelog --stdout --commit-limit false -u --template https://raw.githubusercontent.com/release-it/release-it/master/templates/changelog-compact.hbs"
 npm:
   publish: false
+  skipchecks: true
 
 plugins:
-  '@release-it/conventional-changelog':
-    preset: 'angular'
-    infile: 'CONVENTIONAL_ANGULAR.md'
+
 hooks:
-  after:bump: "npx auto-changelog -p --output AUTOCHANGELOG.md"
+  after:bump: "npx auto-changelog -p --output CHANGELOG.md"
