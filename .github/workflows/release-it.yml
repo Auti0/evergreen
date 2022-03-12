@@ -38,6 +38,6 @@ jobs:
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           
-      - run: yarn release -- minor
+      - run: yarn release -- minor --no-increment
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
