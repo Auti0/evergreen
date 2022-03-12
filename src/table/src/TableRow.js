@@ -76,7 +76,10 @@ const TableRow = memo(
           if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
             try {
               manageTableRowFocusInteraction(event.key, mainRef.current)
-            } catch (_) {}
+            // eslint-disable-next-line no-empty
+            } catch (e) {
+              
+            }
           } else if (event.key === 'Escape') {
             if (mainRef.current && mainRef.current instanceof Node) mainRef.current.blur()
           }

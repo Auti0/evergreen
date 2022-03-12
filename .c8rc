@@ -1,0 +1,23 @@
+{
+  "all": true,
+  "clean": false,
+  "include": [
+    "**/*.test.js"
+  ],
+  "exclude": [
+    "integration-tests/*",
+    "**/test/*",
+    "**/mocha*",
+    "api/modules/db/*",
+    "api/routes/*",
+    "scheduler/jobs/*",
+    "lib/planhat/tests/*",
+    ".coverage/*",
+    "scheduler/worker.js",
+    "tests/js/setupTests.js"
+  ],
+  "report-dir": ".coverage",
+  "reporter": [
+    "lcov"
+  ]
+}
