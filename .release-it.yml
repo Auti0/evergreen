@@ -1,15 +1,34 @@
 git:
   commitMessage: "chore: release v${version}"
-  requireCleanWorkingDir: true
-github: 
-  release: true 
-  autoGenerate: false
-  releaseNotes: "npx auto-changelog --stdout --commit-limit false -u --template https://raw.githubusercontent.com/release-it/release-it/master/templates/changelog-compact.hbs"
+  requireCleanWorkingDir: false
+  requireUpstream: false #set to false to test release it on a local branch
+  push: false #We don't want to push just yet
+  commit: false #We don't want to generate a commit just yet
+  tag: true #We DO want to add a tag to specific commits/merges. These are added during specific workflow steps. Currently master -> latest and latest-> stable
+
+github:
+  release: false # This is enabled by default, and I'm not sure we ever want to create a GH release
+  autoGenerate: false #This allows github to generate their own version of release notes when creating a release
+  #This creates surprisingly good looking release notes on GH releases if we choose to start using them.
+  #releaseNotes: "npx auto-changelog --stdout --commit-limit false -u --template https://raw.githubusercontent.com/release-it/release-it/master/templates/changelog-compact.hbs"
+
 npm:
-  publish: false
-  skipchecks: true
+  publish: false #Enabled by default. We don't use NPM
+  skipchecks: true #Forcing it skip checks so we don't get an error during the run
 
-plugins:
 
-hooks:
-  after:bump: "npx auto-changelog -p --output CHANGELOG.md"
+# git:
+#   commitMessage: 'chore: release v${version}'
+#   requireCleanWorkingDir: true
+# github:
+#   release: true
+#   autoGenerate: false
+#   releaseNotes: 'npx auto-changelog --stdout --commit-limit false -u --template https://raw.githubusercontent.com/release-it/release-it/master/templates/changelog-compact.hbs'
+# npm:
+#   publish: false
+#   skipchecks: true
+
+# plugins:
+
+# hooks:
+#   after:bump: 'npx auto-changelog -p --output CHANGELOG.md'
