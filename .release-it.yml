@@ -1,11 +1,6 @@
 git:
   commitMessage: "chore: release v${version}"
-  requireCleanWorkingDir: true
-  requireUpstream: false #set to false to test release it on a local branch
-  push: false #We don't want to push just yet
-  commit: true #We don't want to generate a commit just yet
-  tag: true #We DO want to add a tag to specific commits/merges. These are added during specific workflow steps. Currently master -> latest and latest-> stable
-
+  
 github:
   release: false # This is enabled by default, and I'm not sure we ever want to create a GH release
   autoGenerate: false #This allows github to generate their own version of release notes when creating a release
