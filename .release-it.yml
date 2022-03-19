@@ -11,7 +11,7 @@ github:
 
 npm:
   publish: false #Enabled by default. We don't use NPM
-  skipchecks: true #Forcing it skip checks so we don't get an error during the run
+  #skipchecks: true #Forcing it skip checks so we don't get an error during the run
 
 hooks:
   after:bump: 'npx auto-changelog -p --output CHANGELOG.md'
@@ -25,9 +25,4 @@ hooks:
 # npm:
 #   publish: false
 #   skipchecks: true
-
-plugins:
-  '@release-it/bumper':
-    in: package.json
-    out: package.json
 
