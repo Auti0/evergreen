@@ -22,11 +22,3 @@ enabled = true
   "tools/"
   ]
   style_guide = "airbnb"
-
-[[transformers]]
-name = "prettier"
-enabled = true
-
-[[transformers]]
-name = "standardjs"
-enabled = true
