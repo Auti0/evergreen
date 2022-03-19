@@ -290,13 +290,11 @@ type TokenizableProps = 'elevation' | 'fontWeight' | 'zIndex'
 type PolymorphicBoxPropsOrTokens<T extends Components = Components> = Omit<
   PolymorphicBoxProps<BaseHTMLElement<T>>,
   TokenizableProps
-> &
-  { [key in TokenizableProps]?: string }
+> & { [key in TokenizableProps]?: string }
 
 export type StyleProps<T extends Components = Components> = {
   [key in ComponentPseudoSelectors<T>]: PolymorphicBoxPropsOrTokens<T>
-} &
-  PolymorphicBoxPropsOrTokens<T>
+} & PolymorphicBoxPropsOrTokens<T>
 
 export type ComponentStyle<T extends Components = Components> = {
   baseStyle?: Partial<StyleProps<T>>
@@ -757,7 +755,7 @@ export enum Position {
   BOTTOM_LEFT = 'bottom-left',
   BOTTOM_RIGHT = 'bottom-right',
   LEFT = 'left',
-  RIGHT = 'right'
+  RIGHT = 'right',
 }
 
 type ForwardRefComponent<P = {}, T = any> = React.ForwardRefExoticComponent<
@@ -812,9 +810,7 @@ export interface AutocompleteProps extends Omit<DownshiftProps<any>, 'children'>
     toggle: () => void
     getRef: React.Ref<any>
     isShown: NonNullable<PopoverProps['isShown']>
-    getInputProps: <T>(
-      options?: T
-    ) => T & {
+    getInputProps: <T>(options?: T) => T & {
       onChange: (event: React.ChangeEvent) => void
       onKeyDown: (event: React.KeyboardEvent) => void
       onBlur: (event: React.FocusEvent) => void
@@ -2797,9 +2793,7 @@ export function majorScale(x: number): number
 
 export function minorScale(x: number): number
 
-export function extractStyles(options?: {
-  nonce?: React.ScriptHTMLAttributes<'script'>['nonce']
-}): {
+export function extractStyles(options?: { nonce?: React.ScriptHTMLAttributes<'script'>['nonce'] }): {
   css: string
   cache: {
     uiBoxCache: ReturnType<typeof boxExtractStyles>['cache']
@@ -2949,7 +2943,9 @@ export interface IconProps extends BoxProps<'svg'> {
 }
 
 /* Start generated icons */
-export type IconComponent = React.ForwardRefExoticComponent<React.PropsWithoutRef<IconProps> & React.RefAttributes<SVGElement>>
+export type IconComponent = React.ForwardRefExoticComponent<
+  React.PropsWithoutRef<IconProps> & React.RefAttributes<SVGElement>
+>
 export declare const AddIcon: IconComponent
 export declare const AddColumnLeftIcon: IconComponent
 export declare const AddColumnRightIcon: IconComponent
