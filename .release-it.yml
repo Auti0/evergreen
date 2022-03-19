@@ -1,8 +1,8 @@
 git:
   commitMessage: "chore: release v${version}"
-  requireCleanWorkingDir: false
+  requireCleanWorkingDir: true
   requireUpstream: false #set to false to test release it on a local branch
-  push: true #We don't want to push just yet
+  push: false #We don't want to push just yet
   commit: true #We don't want to generate a commit just yet
   tag: true #We DO want to add a tag to specific commits/merges. These are added during specific workflow steps. Currently master -> latest and latest-> stable
 
