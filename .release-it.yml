@@ -4,7 +4,7 @@ git:
   commit: true
 
 github:
-  release: true # This is enabled by default, and I'm not sure we ever want to create a GH release
+  release: false # This is enabled by default, and I'm not sure we ever want to create a GH release
   autoGenerate: false #This allows github to generate their own version of release notes when creating a release
   #This creates surprisingly good looking release notes on GH releases if we choose to start using them.
   releaseNotes: "npx auto-changelog --stdout --commit-limit false -u --template https://raw.githubusercontent.com/release-it/release-it/master/templates/changelog-compact.hbs"
