@@ -17,7 +17,6 @@ npm:
   skipchecks: true #Forcing it skip checks so we don't get an error during the run
 
 
-# git:
 #   commitMessage: 'chore: release v${version}'
 #   requireCleanWorkingDir: true
 # github:
