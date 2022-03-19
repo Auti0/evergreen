@@ -11,6 +11,8 @@ npm:
   publish: false #Enabled by default. We don't use NPM
   skipchecks: true #Forcing it skip checks so we don't get an error during the run
 
+hooks:
+  after:bump: 'npx auto-changelog -p --output CHANGELOG.md'
 
 #   commitMessage: 'chore: release v${version}'
 #   requireCleanWorkingDir: true
@@ -24,5 +26,4 @@ npm:
 
 # plugins:
 
-# hooks:
-#   after:bump: 'npx auto-changelog -p --output CHANGELOG.md'
+
