@@ -2,6 +2,7 @@ git:
   commitMessage: "chore: release v${version}"
   requireCleanWorkingDir: false
   commit: true
+  tag: true
 
 github:
   release: false # This is enabled by default, and I'm not sure we ever want to create a GH release
