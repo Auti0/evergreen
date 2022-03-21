@@ -1,0 +1,12 @@
+{
+  "unreleased": true,
+  "commitLimit": false,
+  "ignore-commit-pattern": [
+    "(Merge pull request.*)",
+    "(Merge Master to Latest.*)",
+    "(Push Stable.*)",
+    "(master .* latest.*)",
+    "(Publish Latest)"
+  ],
+  "template": "compact"
+}
