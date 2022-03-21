@@ -3,8 +3,6 @@ name: release-it
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
-  pull_request:
-    branches: [ latest ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -44,3 +42,15 @@ jobs:
       - run: yarn release --preRelease=rc
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: switch to latest
+        uses: actions/checkout@v2
+        with:
+          ref: 'latest'
+        
+      - name: push to latest
+        run: |
+          git merge master --ff
+          git push
+        
+      
