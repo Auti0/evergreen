@@ -50,7 +50,7 @@ jobs:
         
       - name: push to latest
         run: |
-          git merge master --ff
+          git merge origin/master --ff
           git push
         
       
