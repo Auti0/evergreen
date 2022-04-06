@@ -43,7 +43,7 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": ${{ toJSON(steps.slack-markdown-body.outputs.body) }}
+                  "text": ${{ steps.slack-markdown-body.outputs.text }}
                 }
               },
               {
