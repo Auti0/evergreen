@@ -17,6 +17,11 @@ jobs:
         uses: gregziegan/fetch-latest-release@v2.0.0
         with:
           github_token: ${{ github.token }}
+      - name: Slack Markdown Converter
+        id: slack-markdown-body
+        uses: LoveToKnow/slackify-markdown-action@v1.0.0
+        with:
+          text: ${{toJSON(steps.fetch-latest-release.outputs.body)}}
 
       - name: Slack Notification on SUCCESS
         if: success()
@@ -38,7 +43,7 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": ${{ toJSON(steps.fetch-latest-release.outputs.body) }}
+                  "text": ${{ toJSON(steps.slack-markdown-body.outputs.body) }}
                 }
               },
               {
