@@ -17,7 +17,7 @@ jobs:
         with:
           github_token: ${{ github.token }}
       - name: Dump release
-        run: echo '${{steps.fetch-latest-release.output}}'
+        run: echo '${{steps.fetch-latest-release.outputs}}'
       - name: Slack Notification
         uses: tokorom/action-slack-incoming-webhook@main
         env:
