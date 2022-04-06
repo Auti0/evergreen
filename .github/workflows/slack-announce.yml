@@ -12,6 +12,12 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
         run: echo "$GITHUB_CONTEXT"
+      - id: fetch-latest-release
+        uses: thebritican/fetch-latest-release@v1
+        with:
+          github_token: ${{ github.token }}
+      - name: Dump release
+        run: echo '${{steps.fetch-latest-release.output}}'
       - name: Slack Notification
         uses: tokorom/action-slack-incoming-webhook@main
         env:
