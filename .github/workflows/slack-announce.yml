@@ -31,14 +31,7 @@ jobs:
                 "type": "header",
                 "text": {
                   "type": "plain_text",
-                  "text": "${{ steps.fetch-latest-release.outputs.tag_name}} is published!"
-                }
-              },
-              {
-                "type": "section",
-                "text": {
-                  "type": "mrkdwn",
-                  "text": "*Information:*"
+                  "text": "Continu API - ${{ steps.fetch-latest-release.outputs.tag_name}} deployed to Latest:smile:"
                 }
               },
               {
