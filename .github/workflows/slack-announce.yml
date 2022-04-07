@@ -46,11 +46,11 @@ jobs:
                   },
                   {
                     "title": "What Changed",
-                    "text": ${{ steps.slack-markdown-body.outputs.text }}
+                    "value": ${{ steps.slack-markdown-body.outputs.text }}
                   },
                   {
                     "title": "Reference",
-                    "text": "${{ steps.fetch-latest-release.outputs.html_url }}"
+                    "value": "${{ steps.fetch-latest-release.outputs.html_url }}"
                   }
                 ]
               }
