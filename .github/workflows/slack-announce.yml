@@ -30,7 +30,7 @@ jobs:
         env:
           INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:
-          text: "Continu API"
+          text: ":fire::fire: New Release :fire::fire:"
           attachments: |
             [
               {
@@ -40,7 +40,7 @@ jobs:
                 "fields": [
                   {
                     "title": "Version",
-                    "value": "${{ steps.fetch-latest-release.outputs.tag_name}}",
+                    "value": "<${{ steps.fetch-latest-release.outputs.html_url }}|`${{ steps.fetch-latest-release.outputs.tag_name}}`>",
                     "short": true
                   },
                   {
@@ -51,10 +51,6 @@ jobs:
                   {
                     "title": "What Changed",
                     "value": ${{ steps.slack-markdown-body.outputs.text }}
-                  },
-                  {
-                    "title": "Reference",
-                    "value": "${{ steps.fetch-latest-release.outputs.html_url }}"
                   }
                 ]
               }
