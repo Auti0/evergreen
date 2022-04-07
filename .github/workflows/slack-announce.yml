@@ -31,27 +31,27 @@ jobs:
           INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:
           text: A release is published.
-          blocks: |
+          attachments: |
             [
               {
-                "type": "header",
-                "text": {
-                  "type": "plain_text",
-                  "text": "Continu API - ${{ steps.fetch-latest-release.outputs.tag_name}} deployed to Latest:smile:"
-                }
-              },
-              {
-                "type": "section",
-                "text": {
-                  "type": "mrkdwn",
-                  "text": ${{ steps.slack-markdown-body.outputs.text }}
-                }
-              },
-              {
-                "type": "section",
-                "text": {
-                  "type": "mrkdwn",
-                  "text": "${{ steps.fetch-latest-release.outputs.html_url }}"
-                }
+                "color": "good",
+                "author_name": "${{ github.actor }}",
+                "author_icon": "${{ github.event.sender.avatar_url }}",
+                "mrkdown_in": ["fields"],
+                "pretext": A new version Continu API version has been released to Latest,
+                "fields": [
+                  {
+                    "title": "Continu API",
+                    "value": "${{ steps.fetch-latest-release.outputs.tag_name}}"
+                  },
+                  {
+                    "title": "What Changed",
+                    "text": ${{ steps.slack-markdown-body.outputs.text }}
+                  },
+                  {
+                    "title": "Reference",
+                    "text": "${{ steps.fetch-latest-release.outputs.html_url }}"
+                  }
+                ]
               }
             ]
