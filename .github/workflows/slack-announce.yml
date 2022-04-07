@@ -30,12 +30,13 @@ jobs:
         env:
           INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:
+          text: "Release it"
           attachments: |
             [
               {
                 "color": "good",
                 "mrkdown_in": ["fields"],
-                "text": A new version Continu API version has been released to Latest,
+                "text": "A new version Continu API version has been released to Latest",
                 "fields": [
                   {
                     "title": "Continu API",
@@ -43,7 +44,7 @@ jobs:
                   },
                   {
                     "title": "What Changed",
-                    "value": "${{ steps.slack-markdown-body.outputs.text }}"
+                    "value": ${{ steps.slack-markdown-body.outputs.text }}
                   },
                   {
                     "title": "Reference",
