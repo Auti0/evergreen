@@ -49,7 +49,7 @@ jobs:
                     "short": true
                   },
                   {
-                    "title": "What Changed",
+                    "title": "What's Changed",
                     "value": ${{ steps.slack-markdown-body.outputs.text }}
                   }
                 ]
