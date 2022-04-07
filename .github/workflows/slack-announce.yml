@@ -34,7 +34,7 @@ jobs:
           attachments: |
             [
               {
-                "color": "good",
+                "color": "#66D3FF",
                 "mrkdown_in": ["fields"],
                 "text": "A new version Continu API version has been released to Latest",
                 "author_name": "${{ github.actor }}",
