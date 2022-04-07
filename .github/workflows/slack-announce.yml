@@ -35,8 +35,6 @@ jobs:
             [
               {
                 "color": "good",
-                "author_name": "${{ github.actor }}",
-                "author_icon": "${{ github.event.sender.avatar_url }}",
                 "mrkdown_in": ["fields"],
                 "pretext": A new version Continu API version has been released to Latest,
                 "fields": [
