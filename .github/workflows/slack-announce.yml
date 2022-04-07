@@ -30,7 +30,7 @@ jobs:
         env:
           INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:
-          text: ":fidget_spinner::fidget_spinner: New Release :fidget_spinner::fidget_spinner:"
+          text: ":fire::fidget_spinner::fire: New Release :fire::fidget_spinner::fire:"
           attachments: |
             [
               {
