@@ -30,13 +30,12 @@ jobs:
         env:
           INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         with:
-          text: A release is published.
           attachments: |
             [
               {
                 "color": "good",
                 "mrkdown_in": ["fields"],
-                "pretext": A new version Continu API version has been released to Latest,
+                "text": A new version Continu API version has been released to Latest,
                 "fields": [
                   {
                     "title": "Continu API",
