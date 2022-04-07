@@ -45,9 +45,9 @@ jobs:
                   },
                   {
                     "title": "Site",
-                    "value": "https://learn.continu.co",
+                    "value": "<https://learn.continu.co|Learn>",
                     "short": true
-                  }
+                  },
                   {
                     "title": "What Changed",
                     "value": ${{ steps.slack-markdown-body.outputs.text }}
