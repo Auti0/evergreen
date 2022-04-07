@@ -36,7 +36,7 @@ jobs:
               {
                 "color": "#66D3FF",
                 "mrkdown_in": ["fields"],
-                "text": "A new version Continu API version has been released to Latest",
+                "text": "A new version of Continu API version has been released to Latest",
                 "fields": [
                   {
                     "title": "Version",
@@ -45,7 +45,7 @@ jobs:
                   },
                   {
                     "title": "Site",
-                    "value": "<https://learn.continu.co|Learn>",
+                    "value": "https://learn.continu.co",
                     "short": true
                   }
                   {
